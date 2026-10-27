@@ -1,0 +1,11 @@
+﻿{
+  "mcpServers": {
+    "playwright": {
+      "command": "node",
+      "args": [
+        "c:/Users/vitha/OneDrive/Desktop/programming/SocialMediaAutomation/node_modules/@playwright/mcp/cli.js"
+      ],
+      "disabled": false
+    }
+  }
+}
