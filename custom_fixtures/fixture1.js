@@ -10,7 +10,7 @@ const test=base.extend({
     },
     fixture2:async ({page},use) => {
         console.log("myfixture2");
-    n
+    
         await use()
     }
 })

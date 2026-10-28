@@ -27,6 +27,7 @@ test("t1",{ tag: '@smoke' },async ({page,fixture1}) => {
     let loginObj=new LoginPage(page)
     //await page.goto(`${process.env.base_url}`)
     await page.goto("https://truthsocial.com/")
+    await page.waitForLoadState("networkidle")
     await loginObj.username.fill(username)
     console.log("test1");
 })
