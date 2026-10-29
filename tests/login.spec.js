@@ -34,10 +34,15 @@ test("t1",{ tag: '@smoke' },async ({page,fixture1}) => {
 
 test("t2",async ({page,fixture2}) => {
     await page.goto("https://truthsocial.com/")
+
+    // await page.getByLabel("Username").fill('vithappa')
+    // await page.getByLabel('Password').fill('Ym6cfDv@zsE*S57')
+    // await page.getByTestId('submit').click({force:true})
+    // await page.waitForTimeout(3000)
     console.log("test2");
 })
 test("t3",async ({page}) => {
-    await page.goto("https://truthsocial.com/")
+    await page.getByTestId('button').click()
     console.log("test3");
 })
 test("t4",async ({page}) => {
