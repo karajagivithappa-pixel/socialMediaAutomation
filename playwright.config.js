@@ -13,9 +13,10 @@ dotenv.config({ path: path.resolve(__dirname,`.env.${process.env.TEST_ENV || "de
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  globalSetup:'./globalSetup.js',
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -33,27 +34,17 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    storageState:'playwright/.auth/auth.json'
+    
   },
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-    name: 'setup',
-    testMatch: /auth\.setup\.js/,
-  },
-  {
-    name: 'chromium',
-    use: {
-      browserName: 'chromium',
-      storageState: 'playwright/.auth/auth.json',
-    },
-    dependencies: ['setup'],
-    testIgnore: /auth\.setup\.js/,
-  },
+    
+       {
+       name: 'chromium',
+       use: { ...devices['Desktop Chrome'] },
+     },
 
 
 
