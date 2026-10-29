@@ -28,7 +28,7 @@ test("t1",{ tag: '@smoke' },async ({page,fixture1}) => {
     //await page.goto(`${process.env.base_url}`)
     await page.goto("https://truthsocial.com/")
 
-    await loginObj.username.fill(username)
+    //await loginObj.username.fill(username)
     console.log("test1");
 })
 
@@ -39,5 +39,9 @@ test("t2",async ({page,fixture2}) => {
 test("t3",async ({page}) => {
     await page.goto("https://truthsocial.com/")
     console.log("test3");
+})
+test("t4",async ({page}) => {
+    await page.goto("https://truthsocial.com/")
+    console.log("test4");
 })
 
