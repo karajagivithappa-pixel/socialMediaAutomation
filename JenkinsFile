@@ -19,6 +19,21 @@ pipeline {
                 }
             }
         }
+        stage('Run Sharded Tests') {
+    parallel {
+        stage('Shard 1') {
+            steps {
+                bat 'npx playwright test --shard=1/2 --reporter=blob'
+            }
+        }
+
+        stage('Shard 2') {
+            steps {
+                bat 'npx playwright test --shard=2/2 --reporter=blob'
+            }
+        }
+    }
+}
     }
 
     post {
